@@ -2,10 +2,7 @@
 define('DBUG',1);
 define('LANG','zh_cn');
 define('SKIN','default/');
-/*
-if (DBUG) {echo '<br>im in config folder<br>'.__FILE__.':'.__LINE__.'<BR>';}
-*/
-
+define('BASEURL','http://'.$_SERVER['HTTP_HOST'].'/'.APPNAME.'/');
 
 $config_db = array(
 	'driver'=>'mysql',
@@ -16,8 +13,6 @@ $config_db = array(
 	'tabhead'	=>'',
 	'database'	=>'river'
 );
-
-define('BASEURL','http://'.$_SERVER['HTTP_HOST'].'/wallet/');
 
 //user
 define('USER_NOT_EXIST','0001');
