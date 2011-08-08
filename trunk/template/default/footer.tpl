@@ -11,6 +11,7 @@
 
 -->
 	<{*'/////'|urlto:'wallet_out_day':"'day'=>'$time.bbccddee',"*}>
+
 <{jsholder output="1"}><{/jsholder}>
 <script type="text/javascript">
 $(function(){

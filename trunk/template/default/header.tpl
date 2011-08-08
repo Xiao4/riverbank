@@ -56,8 +56,6 @@ a:active
 }
 
 </style>
-<link rel="stylesheet" href="*/reset.css" type="text/css" />
-<link rel="stylesheet" href="*/screen.css" type="text/css" />
 <script src="<{$smarty.const.BASEURL}>js/jquery.js"></script>
 <script src="<{$smarty.const.BASEURL}>js/base.js"></script>
 <script>!window.jQuery && document.write('<script src="http://code.jquery.com/jquery-1.4.2.min.js"><\/script>');</script>
