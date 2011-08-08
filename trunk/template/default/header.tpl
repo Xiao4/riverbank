@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><{$sitename}></title>
+<!--tpl:cssholder-->
 <style>
 #nav UL{
 	background-color:#000;WIDTH:100%;
