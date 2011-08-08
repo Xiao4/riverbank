@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+	<meta charset="UTF-8"/>
+	<!--[if lt IE 9]>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" /> 
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>Ji</title>
+	<meta name="Author" content="" />
+	<meta name="viewport" content="width=1024" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" /> 
+</head>
+<body id="index">
+<header id="globalheader">
+	<div class="wrapper">
+	<p>Xiao4: 年度花销 ￥12,345.66 <button class="icon iconM icon_add btn_add ac_show_add_dialog" title="记账">+</button></p>
+	<nav id="nav" class="nav_h">
+		<ul>
+			<li><a href="setting.htm" title="设置"><span class="icon iconM icon_setting"></span></a></li>
+			<li><a href="logout.htm" title="登出"><span class="icon iconM icon_logout"></span></a></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+<div id="main">
+	<div id="welcome" class="wrapper">
+		<div id="counting">
+			<h1>已记录: ￥ 25,689,465.28</h1>
+			<button class="btnL btn_reg" id="btn_reg_index"><span>加入!</span></button>
+			<form id="form_reg_index" class="form_reg" action="reg.php" method="post">
+				<fieldset>
+					<legend>注册</legend>
+					<label class="labelM"><span>Email：</span><input type="email" class="txtM" required="true"/></label>
+					<label class="labelM"><span>密码：</span><input type="password" class="txtM" required="true"/></label>
+					<button class="btnM btn_default" type="submit"><span>确定</span></button>
+					<button class="btnM btn_gray" type="reset"><span>取消</span></button>
+				</fieldset>
+			</form>
+		</div>
+		<div id="login_index">
+			<form action="login.php" method="post">
+				<fieldset>
+					<legend>登陆</legend>
+					<label class="labelM"><span>Email：</span><input type="email" class="txtM" autofocus="autofocus" required="true"/></label>
+					<label class="labelM"><span>密码：</span><input type="password" class="txtM" required="true"/></label>
+					<button class="btnM btn_default" type="submit"><span>确定</span></button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<footer class="atbottom">
+	<div id="globalfooter" class="wrapper">
+		&#169;2011
+	</div>
+</footer>
+</body>
+</html>
