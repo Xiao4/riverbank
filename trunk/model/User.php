@@ -1,6 +1,5 @@
 <?php
 class User{
-	
 	public static function maxid(){
 		$_options=array(
 					'f'=>'id',	//find *
@@ -23,6 +22,7 @@ class User{
 	}
 	
 	public static function login($user,$password){
+		session_start();
 		$options=array(
 				'f'=>'id,password',
 				'w'=>'email=\''.$user.'\' ',
@@ -33,7 +33,7 @@ class User{
 		
 		if( isset($r['id']) && $r['id']>0 ){
 			if(  $r['password'] == $password ){
-				setcookie("user",$r['id'], time()+3600*24);
+				setcookie("user",$r['id'], time()+3600*24,'/'.APPNAME);
 				//return $r['id'];
 				return array('data'=>$r['id'],'msg'=>'登录成功');
 			}else{

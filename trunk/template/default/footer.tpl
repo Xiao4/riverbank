@@ -12,9 +12,9 @@
 -->
 	<{*'/////'|urlto:'wallet_out_day':"'day'=>'$time.bbccddee',"*}>
 
-<{jsholder output="1"}><{/jsholder}>
+<{*jsholder output="1"*}><{*/jsholder*}>
 <script type="text/javascript">
 $(function(){
-<{scriptholder output="1"}><{/scriptholder}>
+<{*scriptholder output="1"*}><{*/scriptholder*}>
 });
 </script>

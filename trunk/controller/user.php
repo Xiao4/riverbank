@@ -6,7 +6,7 @@ class controller_user extends controller_base{
 		parent::init();
 		if(!User::logined()){
 			//exit('no user logined');
-			$this->redirect(BASEURL.'');
+			$this->redirect(BASEURL);
 		}
 	}
 	
@@ -24,8 +24,8 @@ class controller_user extends controller_base{
 			);
 		$sql = DB_Sql::get('wallet_vary',$args);
 		$list = DB::finds($sql);
-		//print_r($list);
-		
+		print_r($list);
+		exit;
 		view::assign('listkeys',explode(',',$listkeys));
 		
 		view::assign(array(
