@@ -11,7 +11,7 @@ function login($user,$password){
 	  }else{
 		//alert(data.data);
 		//跳转到用户页面
-		window.location="<{$smarty.const.BASEURL}>me";
+		window.location="<{'me'|urlto}>";
 	  }
 	},"json");
 }

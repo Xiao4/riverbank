@@ -70,8 +70,8 @@ a:active
 	<h1 style="MARGIN:0 0 0 10px;"> <{$sitename}></h1>
 	<div id="nav" style="background-color:#;width:300PX;TEXT-ALIGN:left;position:absolute;TOP:10px;LEFT:125px;">
 		<ul>
-		<{if $currentUserId}><li><a href="<{''|urlto:'me'}>">Me</a></li><{/if}>
-		<{if $currentUserId}><li><a href="<{''|urlto:'logout'}>">Out</a></li><{/if}>
+		<{if $currentUserId}><li><a href="<{'me'|urlto}>">Me</a></li><{/if}>
+		<{if $currentUserId}><li><a href="<{'logout'|urlto}>">Out</a></li><{/if}>
 		</ul>
 	</div>
 </div>
