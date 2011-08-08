@@ -24,8 +24,8 @@ class controller_user extends controller_base{
 			);
 		$sql = DB_Sql::get('wallet_vary',$args);
 		$list = DB::finds($sql);
-		print_r($list);
-		exit;
+		//print_r($list);
+		
 		view::assign('listkeys',explode(',',$listkeys));
 		
 		view::assign(array(
