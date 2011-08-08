@@ -56,7 +56,7 @@ function printtime($time,$echo=TRUE){
 	}
 }
 
-function urlto($_='',$routename='default',$args=NULL,$echo=TRUE){
+function urlto($routename='default',$args=NULL,$echo=TRUE){
 	$routename = (''==$routename)? 'default':$routename;
 	$map = Register::get('routemap');
 	if($args){
