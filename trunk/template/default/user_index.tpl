@@ -83,7 +83,7 @@ $('#ajax_add').bind('blur', function(event){
 });
 
 function add(){
-	$.post('<{$smarty.const.BASEURL}>idealadd',
+	$.post('<{'i_dealadd'|urlto}>',
 	{deal:$('#ajax_add').val()},
 	function(data) {
 	  //alert(data);//$('.result').html(data);
@@ -100,7 +100,7 @@ function add(){
 	},"json");
 }
 function remove($id){
-	$.post('<{$smarty.const.BASEURL}>iremove',
+	$.post('<{'i_remove'|urlto}>',
 	{id:$id},
 	function(data) {
 	  //alert(data);//$('.result').html(data);

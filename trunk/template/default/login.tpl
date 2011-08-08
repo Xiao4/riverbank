@@ -2,7 +2,7 @@
 
 <script>
 function login($user,$password){
-	$.post('<{$smarty.const.BASEURL}>ilogin',
+	$.post('<{'i_login'|urlto}>',
 	{user:$user, password:$password},
 	function(data) {
 	  //alert(data);//$('.result').html(data);
