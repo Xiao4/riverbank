@@ -6,7 +6,7 @@ header("content-type:text/html; charset=utf-8");
 define('ROOT_PATH',realpath(dirname(__FILE__)).'/');
 define('CONTROLLER_PATH',ROOT_PATH.'controller/');
 define('MODEL_PATH',ROOT_PATH.'model/');
-define('MODULE_PATH',ROOT_PATH.'module/');
+define('MODULE_PATH',ROOT_PATH.'lib/');
 
 require_once ROOT_PATH.'/config/config.inc.php';
 
