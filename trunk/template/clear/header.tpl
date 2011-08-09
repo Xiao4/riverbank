@@ -21,7 +21,7 @@
 <{/jsholder}>
 	<link rel="shortcut icon" href="<{$smarty.const.BASEURL}>assets/favicon.ico" type="image/x-icon"/> 
 </head>
-<body id="<{pageName}>_page">
+<body id="<{$pageName}>_page">
 <header id="globalheader">
 	<div class="wrapper">
 		<{if $currentUserId}>
