@@ -59,7 +59,7 @@ a:active
 <script src="<{$smarty.const.BASEURL}>js/jquery.js"></script>
 <script src="<{$smarty.const.BASEURL}>js/base.js"></script>
 <script>!window.jQuery && document.write('<script src="http://code.jquery.com/jquery-1.4.2.min.js"><\/script>');</script>
-<link rel="shortcut icon" href="http://static.jquery.com/favicon.ico" type="image/x-icon"/> 
+<link rel="shortcut icon" href="<{$smarty.const.BASEURL}>assets/favicon.ico" type="image/x-icon"/> 
 </head>
 
 
