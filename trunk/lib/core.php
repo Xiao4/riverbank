@@ -173,7 +173,7 @@ Class APP{
 			*/
 			if( $len = strpos( $_SERVER['REQUEST_URI'],'?' ) ){
 				$_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'],0,$len);
-				echo '<b>cuuuuuuuuut</b>';
+				//echo '<b>cuuuuuuuuut</b>';
 			}
 			if( substr($_SERVER['REQUEST_URI'],-1,1)=='/' ){
 				$_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'],0,strlen($_SERVER['REQUEST_URI'])-1);
