@@ -21,6 +21,10 @@ class User{
 		return FALSE;
 	}
 	
+	public static function logout(){
+		setcookie('user','', time()-3600*24,'/'.APPNAME);
+	}
+	
 	public static function login($user,$password){
 		session_start();
 		$options=array(

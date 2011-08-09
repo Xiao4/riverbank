@@ -49,7 +49,7 @@ class controller_user extends controller_base{
 	}
 	
 	public function action_logout(){
-		setcookie('user','', time()-3600*24);
+		User::logout();
 		$this->redirect(BASEURL);
 	}
 	
