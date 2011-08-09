@@ -158,7 +158,7 @@ Class APP{
 		$conroller = isset($request['c'])?$request['c']:'d';
 		$action = isset($request['a'])?$request['a']:'i';
 		
-		$map = new RouteMap( array( 'url_rewriting' => TRUE ) );
+		$map = new routemap( array( 'url_rewriting' => TRUE ) );
 		Register::set('routemap',$map);
 		
 		require_once ROOT_PATH.'/config/route.php';
