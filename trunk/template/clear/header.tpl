@@ -25,7 +25,7 @@
 <header id="globalheader">
 	<div class="wrapper">
 		<{if $currentUserId}>
-		<p>Xiao4: 年度花销 ￥12,345.66 <button class="icon iconM icon_add btn_add ac_show_add_dialog" title="记账">+</button></p>
+		<p>RIVER <button class="icon iconM icon_add btn_add ac_show_add_dialog" title="记账">+</button></p>
 		<nav id="nav" class="nav_h">
 			<ul>
 				<li><a href="<{'me'|urlto}>" title="设置"><span class="icon iconM icon_setting"></span></a></li>
