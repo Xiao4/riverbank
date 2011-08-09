@@ -80,7 +80,7 @@ class ERouteMapNoReqs extends ERouteMap {};
  *       You'll know you need it when you see it.
  *       The same applies to RouteMap::dispatch()
  */
-class RouteMap
+class routemap
 {
 	protected $_dynamic; // route => URL mappings (for dynamic routes)
 	protected $_actions; // route => (controller, action) mappings
