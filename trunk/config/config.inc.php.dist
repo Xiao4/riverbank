@@ -3,6 +3,7 @@ define('DBUG',1);
 define('LANG','zh_cn');
 define('SKIN','default/');
 define('BASEURL','http://'.$_SERVER['HTTP_HOST'].'/'.APPNAME.'/');
+define('ASSETS',BASEURL.'/assets/'.SKIN);
 
 $config_db = array(
 	'driver'=>'mysql',
