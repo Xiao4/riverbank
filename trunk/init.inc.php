@@ -11,16 +11,16 @@ define('MODULE_PATH',ROOT_PATH.'lib/');
 define('APPNAME', substr(dirname(__FILE__) ,strrpos(dirname(__FILE__),DIRECTORY_SEPARATOR)+1) );
 //echo APPNAME;
 
-require_once ROOT_PATH.'/config/config.inc.php';
+require_once ROOT_PATH.'config/config.inc.php';
 
 global $currentUserId;
 //i18n
 $lang = ( isset($_COOKIE['lang']) && ''!=$_COOKIE['lang'] )? $_COOKIE['lang']:'zh_cn';
 global $lang;
-$lang = require_once ROOT_PATH.'/i18n/'.$lang.'/lang.php';
+$lang = require_once ROOT_PATH.'i18n/'.$lang.'/lang.php';
 //Register::set('lang',$lang);
 
-require_once MODULE_PATH.'/core.php';
+require_once MODULE_PATH.'core.php';
 
 //数据库初始化
 $db = DB::get($config_db);//Register::set('db',$db);
