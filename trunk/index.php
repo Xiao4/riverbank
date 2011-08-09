@@ -6,6 +6,7 @@ echo '</pre>';
 //exit;
 */
 require('init.inc.php');
+
 APP::run($request);
 
 if( isset($_COOKIE['debug']) ){

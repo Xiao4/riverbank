@@ -7,10 +7,10 @@ class controller_d extends controller_base{
 	
 	
 	public function action_i(){
-		print_r($this->request);
+		echo '<h1>404 wrong direction</h1>';
 	}
 	public function action_index(){
-		print_r($this->request);
+		echo '<h1>404 wrong direction</h1>';
 	}
 	
 }

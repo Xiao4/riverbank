@@ -17,10 +17,10 @@ function login($user,$password){
 }
 </script>
 
-<form action="" onsubmit="return false;">
+<form action="<{'i_login'|urlto}>" method="POST" onsubmit="return false;">
 <input id="user" name="user" type="text" value=""><br>
 <input id="password" name="password" type="text" value=""><br><br>
-<input type="button" onclick="login( $('#user').val(), $('#password').val() );" value="Log in"><br><br>
+<input type="submit" onclick="login( $('#user').val(), $('#password').val() );" value="Log in"><br><br>
 
 <a href="javascript:return false;" onclick="login( $('#user').val(), $('#password').val() );">Log in</a><br>
 
