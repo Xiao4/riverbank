@@ -219,6 +219,7 @@ Class APP{
 		$controller->request = Register::get('request');
 		
 		$skin = ( isset($_COOKIE['skin']) && ''!=$_COOKIE['skin'] )? $_COOKIE['skin']:'default';
+		$skin = SKIN;
 		require_once MODULE_PATH.'/smarty/init.php';
 		$controller->view = $smarty;
 		view::set($smarty);
