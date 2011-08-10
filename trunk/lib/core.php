@@ -190,6 +190,7 @@ Class APP{
 		}
 		catch(Exception $e)
 		{
+			die('error when routing');
 		}
 		if( isset($_COOKIE['route']) ){
 			echo '<br>route<br>';
@@ -218,8 +219,13 @@ Class APP{
 		$controller->db = Register::get('db');
 		$controller->request = Register::get('request');
 		
-		$skin = ( isset($_COOKIE['skin']) && ''!=$_COOKIE['skin'] )? $_COOKIE['skin']:'default';
-		$skin = SKIN;
+		if ( defined('SKIN') ){
+			$skin = SKIN;
+		}else{
+			$skin = ( isset($_COOKIE['skin']) && ''!=$_COOKIE['skin'] )? 
+					$_COOKIE['skin']: 
+					'default';
+		}
 		require_once MODULE_PATH.'/smarty/init.php';
 		$controller->view = $smarty;
 		view::set($smarty);

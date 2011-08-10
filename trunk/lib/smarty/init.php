@@ -23,7 +23,7 @@ if (!defined('INIT_NO_SMARTY'))
 	$smarty->left_delimiter='<{';
 	$smarty->right_delimiter='}>';
 
-	$smarty->load_filter('output','cssholder'); 
+	$smarty->loadFilter('output','cssholder'); 
 }
 class Template {
 	private $_cssholder = array(); 
