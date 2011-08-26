@@ -1,4 +1,5 @@
 <?php
+/*database 操作类*/
 class DB{
 	private static $instance=NULL;
 	
@@ -51,7 +52,7 @@ class DB{
 		if( isset($query['error']) ){
 			return $query;
 		}
-		return TRUE;
+		return self::$instance->affected_rows();
 	}
 	
 	public static function insert($sql){
@@ -82,3 +83,4 @@ class DB{
 	}
 	
 }
+

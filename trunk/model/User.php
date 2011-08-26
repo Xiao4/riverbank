@@ -12,6 +12,14 @@ class User{
 		return $id;
 	}
 	
+	public static function getCurrentId(){
+		global $currentUserId;
+		if( isset($_COOKIE['user']) && $_COOKIE['user']>0 ){
+			$currentUserId = $_COOKIE['user'];
+			return $currentUserId;
+		}
+		return FALSE;
+	}
 	public static function logined(){
 		global $currentUserId;
 		if( isset($_COOKIE['user']) && $_COOKIE['user']>0 ){

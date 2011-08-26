@@ -12,18 +12,18 @@ if (!defined('INIT_NO_SMARTY'))
 	$smarty->compile_dir =ROOT_PATH. 'smarty_temp/templates_c/'.$skin.'/';
 	$smarty->cache_dir = ROOT_PATH.'smarty_temp/cache/'.$skin.'/';
 	
-	
+	$smarty->allow_php_tag = true;
 	$smarty->compile_check = true;
 	$smarty->debugging = false;
 
-	$smarty->force_compile = true;
-	$smarty->caching = true;
+	$smarty->force_compile = false;
+	$smarty->caching = false;
 	$smarty->cache_lifetime = 900;
 	
 	$smarty->left_delimiter='<{';
 	$smarty->right_delimiter='}>';
 
-	$smarty->loadFilter('output','cssholder'); 
+	//$smarty->loadFilter('output','cssholder'); 
 }
 class Template {
 	private $_cssholder = array(); 

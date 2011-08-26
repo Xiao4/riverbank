@@ -35,7 +35,29 @@ function lang($k,$echo=TRUE){
 	}
 }
 
+
+function is_set($arr, $k, $v=NULL){
+	if( isset($arr[$k]) ){
+		return $arr[$k];
+	}else{
+		return $v;
+	}
+}
+
+function printprice($price,$echo=TRUE){
+	$price = str_replace('.00','',strval($price));
+	$len = strlen($price);
+	for($i=$len;$i>0;$i--){
+		if( '0'!=substr($price,$i-1) ){
+			return substr($price,0,$i).'<br>';
+			break;
+		}else{
+		}
+	}
+}
+
 function printtime($time,$echo=TRUE){
+	return date('Y/m/d',$time);
 	$diff = (time()-$time)/1;
 	if( $diff<=60 ){
 		return '刚刚';
@@ -190,7 +212,7 @@ Class APP{
 		}
 		catch(Exception $e)
 		{
-			die('error when routing');
+			//die('error when routing');
 		}
 		if( isset($_COOKIE['route']) ){
 			echo '<br>route<br>';
@@ -226,6 +248,8 @@ Class APP{
 					$_COOKIE['skin']: 
 					'default';
 		}
+		Register::set('skin',$skin);
+		
 		require_once MODULE_PATH.'/smarty/init.php';
 		$controller->view = $smarty;
 		view::set($smarty);

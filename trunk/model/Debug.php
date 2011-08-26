@@ -1,12 +1,14 @@
 <?php
 class Debug{
 	static $arr = array();
+	
 	public static function add($str){
 		$backtrace=debug_backtrace();
 		$trace = self::getinfo($backtrace);
 		
 		self::$arr[] = array('info'=>$str,'trace'=>$trace);
 	}
+	
 	public static function getinfo($backtrace){
 		$arr = array();
 		$last=array('file'=>'','line'=>'');
@@ -34,6 +36,7 @@ class Debug{
 		array_pop($arr);
 		return $arr;
 	}
+	
 	public static function dump(){
 		/*
 		*/
@@ -72,10 +75,13 @@ class Debug{
 				if(''==$v['info']){$v['info']='NULL';}
 				echo ''.$v['info'];
 			}
-			echo '<div id="debug_'.$i.'" style="background-color:#A7CBFF;padding:10px 10px 20px 30px;margin:10px 30px 0 0px;display:none-;font-size:13px;"><table>';
+			echo '<div id="debug_'.$i.'" style="background-color:#A7CBFF;padding:10px 10px 20px 30px;margin:10px 30px 0 0px;display:none;font-size:13px;"><table>';
 			
 				//print_r($v['trace']);
 				foreach($v['trace'] AS $trace){
+					if( !error($trace,'class') ){
+						$trace['class']='';
+					}
 					echo '<tr>
 					<td>'.$trace['class'].'</td>
 					<td>'.$trace['function'].'</td>
@@ -88,4 +94,8 @@ class Debug{
 		}
 		echo '</div>';
 	}
+}
+
+function error($arr,$k){
+	return isset($arr[$k]) && $arr[$k];
 }

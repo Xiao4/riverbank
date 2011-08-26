@@ -5,6 +5,7 @@ class controller_api_base{
 	private $msg = '';
 	
 	public function init(){
+		Register::set('ajax',TRUE);
 		//view::assign('sitename','RIVER');
 	}
 	

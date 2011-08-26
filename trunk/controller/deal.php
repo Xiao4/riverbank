@@ -3,11 +3,27 @@ class controller_deal extends controller_base{
 	
 	public function init(){
 		parent::init();
-		if(!User::logined()){
-			//exit('no user logined');
-			$this->redirect(BASEURL.'');
-			exit;
-		}
+		/*
+		print_r($_GET);
+		print_r($_POST);
+		*/
+	}
+	
+	public function action_cate(){
+		//$r = Deal::save_to_cate($deal['thing'],$_POST['tocate'],$_POST['fromcate']);
+		$_POST['fromcate'] = ( (int)$_POST['fromcate']>0 ) ? $_POST['fromcate'] : 0;
+		//$r = Deal::save_to_cate($_POST['thing'],$_POST['tocate'],$_POST['fromcate']);
+		$r = Deal::save_to_cate($_POST['thing'],$_POST['tocate'],$_POST['fromcate']);
+		echo $r;
+		return $r;
+		//print_r($r);
+		//exit;
+	}
+	
+	public function action_test_cate(){
+		$deal = Deal::get_deal_info($_POST['thing']);
+		Deal::save_to_cate('地铁',3);
+		exit;
 	}
 	
 	public function action_add(){

@@ -1,5 +1,7 @@
 <?php
 class controller_base{
+	public $view = NULL;
+	
 	public function init(){
 		view::assign('sitename','RIVER');
 	}

@@ -7,15 +7,15 @@ class Wallet{
 					'l'=>1,	//len
 				);
 		$sql = DB_Sql::get('wallet_vary',$_options);
-		
-		$id = DB::finds($sql);
-		Debug::add($list);
+		$id = DB::find($sql);
 		return $id;
 	}
 	
 	//$feed 接收id 或者对象
 	public static function delete($feed){
 		
+		Deal::delete($feed);
+		/*
 		if( is_numeric($feed) ){
 			$feed=array('id'=>$feed);
 		}
@@ -24,7 +24,9 @@ class Wallet{
 		//echo $sql;
 		//exit;
 		$r = DB::excute($sql);
+		Service::update($feed);
 		Debug::add($r);
+		*/
 	}
 	
 	public static function update($feed){

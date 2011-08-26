@@ -7,7 +7,6 @@ define('ROOT_PATH',realpath(dirname(__FILE__)).'/');
 define('CONTROLLER_PATH',ROOT_PATH.'controller/');
 define('MODEL_PATH',ROOT_PATH.'model/');
 define('MODULE_PATH',ROOT_PATH.'lib/');
-
 define('APPNAME', substr(dirname(__FILE__) ,strrpos(dirname(__FILE__),DIRECTORY_SEPARATOR)+1) );
 //echo APPNAME;
 

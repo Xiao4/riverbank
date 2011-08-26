@@ -18,7 +18,19 @@ Class DB_Sql{
 	var $_order='';
 	var $_fileds=array();
 	
+	function __construct($table,$options){
+		$this->_table = TABLE_HEAD.$table;
+		
+		$this->_options = array_merge($this->_options, $options);
+		
+		return $this;
+	}
 	
+	public static function get($table,$options=array()){
+		$obj = new self($table,$options);
+		$obj->_equip();
+		return $obj;
+	}
 	
 	function _where(){
 	}
@@ -62,12 +74,6 @@ Class DB_Sql{
 		return $sql;
 	}
 	
-	public static function get($table,$options=array()){
-		$obj = new self($table,$options);
-		$obj->_equip();
-		return $obj;
-	}
-	
 	function __tostring(){
 		return $this->select();
 	}
@@ -84,7 +90,7 @@ Class DB_Sql{
 	
 	
 	public function dele($table,$info=array(),$options=array()){
-		if( isset($info['id']) ){
+		if( is_array($info) && isset($info['id']) ){
 			$options['i'] = $info['id'];
 			unset($info['id']);
 		}
@@ -96,14 +102,6 @@ Class DB_Sql{
 		$this->_table = $table;
 		$this->_options = array_merge($this->_options, $options);
 		$this->_equip();
-		return $this;
-	}
-	
-	function __construct($table,$options){
-		$this->_table = $table;
-		
-		$this->_options = array_merge($this->_options, $options);
-		
 		return $this;
 	}
 	
