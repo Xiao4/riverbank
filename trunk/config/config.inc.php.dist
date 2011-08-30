@@ -1,15 +1,16 @@
 <?php
 define('DBUG',1);
 define('LANG','zh_cn');
-define('SKIN','default/');
-define('BASEURL','http://'.$_SERVER['HTTP_HOST'].'/'.APPNAME.'/');
-define('ASSETS',BASEURL.'/assets/'.SKIN);
+define('SKIN','wap');
+define('TABLE_HEAD','rv_');
+
+define('BASEURL','http://'.$_SERVER['HTTP_HOST'].'/'.APPNAME.'');
 
 $config_db = array(
 	'driver'=>'mysql',
 	'host'=>'localhost',
-	'username'	=>'root',
-	'userpwd'	=>'',
+	'username'	=>'river',
+	'userpwd'	=>'river',
 	'charset'	=>'utf8',
 	'tabhead'	=>'',
 	'database'	=>'river'
