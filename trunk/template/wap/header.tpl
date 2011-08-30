@@ -26,7 +26,7 @@ BODY {
 	float:left;
 	font-weight:bold;
 	width:77px;height:41px;
-	background:url(/river/assets/wap/nav_bg.png) no-repeat 0px -0px;
+	background:url(assets/wap/nav_bg.png) no-repeat 0px -0px;
 }
 #nav UL a li.search{
 	display:inline;
@@ -37,7 +37,7 @@ BODY {
 	float:left;
 	font-weight:bold;
 	width:22px;height:22px;
-	background:url(/river/assets/wap/search_hide.png) no-repeat 0px -0px;
+	background:url(assets/wap/search_hide.png) no-repeat 0px -0px;
 }
 A{
     TEXT-DECORATION: none;
