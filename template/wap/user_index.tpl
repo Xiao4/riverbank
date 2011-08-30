@@ -14,7 +14,7 @@
 	border:1px solid #95C646;
 	position:relative;
 	BACKGROUND-COLOR:#FAFAFA;
-	/*background:url(/river/assets/wap/10a.jpg) repeat-x 0px -0px;*/
+	/*background:url(assets/wap/10a.jpg) repeat-x 0px -0px;*/
 }
 #deal_list li div.disc{
 	display:inline;
@@ -46,7 +46,7 @@
 	TOP:-0PX;right:-0PX;
 	position:absolute;
 	FONT-SIZE:20px;
-	background:url(/river/assets/wap/nav_bg.png) no-repeat 0px -23px;
+	background:url(assets/wap/nav_bg.png) no-repeat 0px -23px;
 }
 </style>
 <script>
