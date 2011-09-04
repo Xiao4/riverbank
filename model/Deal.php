@@ -27,6 +27,9 @@ class Deal{
 		//更新用户记录
 		Service::update();
 		
+		//更新添加频率
+		Service::updateUserKeyWord();
+		
 		
 		Debug::add($r);
 		return $r;

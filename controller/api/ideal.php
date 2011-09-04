@@ -67,7 +67,6 @@ class controller_api_ideal extends controller_api_base{
 			$deal['amount'] = $tmp[1];
 			*/
 			$deal = Deal::get_deal_info($this->request['deal']);
-			
 			if( is_set($deal,'error') ){
 				$this->error('1');
 				$this->msg('请填写正确信息 格式：东西 价格');
