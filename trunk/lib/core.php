@@ -45,7 +45,10 @@ function is_set($arr, $k, $v=NULL){
 }
 
 function printprice($price,$echo=TRUE){
-	$price = str_replace('.00','',strval($price));
+	if( strrpos(strval($price),'.00' )){
+		$price = str_replace('.00','',strval($price));
+		return $price;
+	}
 	$len = strlen($price);
 	for($i=$len;$i>0;$i--){
 		if( '0'!=substr($price,$i-1) ){
@@ -177,7 +180,7 @@ Class APP{
 	static $view = '';
 	function run($request){
 		
-		$conroller = isset($request['c'])?$request['c']:'d';
+		$controller = isset($request['c'])?$request['c']:'d';
 		$action = isset($request['a'])?$request['a']:'i';
 		
 		$map = new routemap( array( 'url_rewriting' => TRUE ) );
@@ -227,17 +230,19 @@ Class APP{
 		/*
 		*/
 		if( isset($actions[0]) AND isset($actions[1]) ){
-			list($conroller,$action) = $actions;
+			list($controller,$action) = $actions;
 		}
-		$conroller = 'controller_'.$conroller;
+		$controller = 'controller_'.$controller;
 		$action = 'action_'.$action;
 		
-		if(!method_exists($conroller,$action))
+		//echo '<hr>'.$controller.'::'.$action.'<br>';
+		if(!method_exists($controller,$action))
 		{
-			//$conroller = 'controller_d';$action='action_i';
+			//$controller = 'controller_d';$action='action_i';
 		}
+		//exit;
 		
-		$controller = new $conroller();
+		$controller = new $controller();
 		$controller->db = Register::get('db');
 		$controller->request = Register::get('request');
 		
@@ -253,12 +258,12 @@ Class APP{
 		require_once MODULE_PATH.'/smarty/init.php';
 		$controller->view = $smarty;
 		view::set($smarty);
-		
+	
 		$controller->init();
 		$controller->run($action);
 		/*
-			call_user_func(array($conroller,'init'));
-			call_user_func(array($conroller,$action));
+			call_user_func(array($controller,'init'));
+			call_user_func(array($controller,$action));
 		*/
 		//print_r($controller->view);
 	}

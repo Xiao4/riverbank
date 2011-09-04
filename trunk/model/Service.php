@@ -8,6 +8,59 @@ class Service{
 		
 	}
 	
+	public static function updateUserKeyWord(){
+		$currentUserId = User::getCurrentId();
+		print_r($_REQUEST);
+		$feed=array();
+		$deal = trim($_REQUEST['deal']);
+		$feed['input']=$deal;
+		$feed['userid']=$currentUserId;
+
+
+		
+		$args = array(
+					'f'	=>'id,info',
+					'l'	=>1,
+					'w'	=>'input=\''.$deal.'\'',
+					//'w'	=>'thing like \'士力%\'',
+				);
+		//print_r($args);
+		
+		$sql = DB_Sql::get('wallet_input_history',$args);
+		echo '<br>'.$sql.'<br>';
+		$f = DB::find($sql);
+		print_r($f);
+
+
+		if( false===$f ){
+			echo 'new';
+		}else{
+			$feed = array('id'=>$f['id']);
+			$feed['info']=unserialize($f['info']);
+
+			echo 'update';
+
+		}
+
+		if( !is_array($feed['info']) ){
+			$feed['info']=array(''.time()=>1);
+		}
+
+		echo '<pre>';
+		print_r($feed['info']);
+		echo '</pre>';
+
+		$feed['info']=serialize($feed['info']);
+		$sql = DB_Sql::save('wallet_input_history',$feed);
+		echo '<br>'.$sql.'<br>';
+		$r = DB::save($sql);
+
+		if( isset($r['error']) ){
+			//echo 'w';
+		}
+		exit;
+
+	}
 	
 	public static function update_limit($userid){
 		$currentUserId = User::getCurrentId();
